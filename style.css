@@ -1,0 +1,219 @@
+@import url("https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap");
+
+:root {
+  /* Text */
+
+  --very-dark-desaturated-blue: hsl(238, 29%, 16%);
+  --soft-red: hsl(14, 88%, 65%);
+
+  /* Gradient */
+
+  /* Background gradient */
+
+  --soft-violet: hsl(273, 75%, 66%);
+  --soft-blue: hsl(240, 73%, 65%);
+
+  /* Text */
+
+  --very-dark-grayish-blue: hsl(237, 12%, 33%);
+  --dark-grayish-blue: hsl(240, 6%, 50%);
+
+  /* Dividers */
+
+  --light-grayish-blue: hsl(240, 5%, 91%);
+}
+
+body {
+  background: linear-gradient(180deg, var(--soft-violet), var(--soft-blue))
+    no-repeat;
+  font: 400 12px "Kumbh Sans", sans-serif;
+  padding: 4rem 0rem;
+
+  min-height: 100vh;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+
+  transition: all 0.4s ease-in-out;
+}
+
+main {
+  background-color: #fff;
+  border-radius: 20px;
+
+  width: 90%;
+  margin: auto;
+  margin-top: clamp(30px, 25vh, 5000px);
+  transition: all 300ms ease-in-out;
+  position: relative;
+}
+
+.images {
+  position: relative;
+  height: clamp(100px, 20vw, 130px);
+
+  background-image: url(./images/bg-pattern-mobile.svg);
+  background-size: clamp(180px, 70%, 300px);
+  background-position: center -5px;
+  background-repeat: no-repeat;
+}
+
+.images picture {
+  display: block;
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.images picture::before {
+  position: absolute;
+  top: -140%;
+  content: "";
+
+  width: 100%;
+  height: 250px;
+
+  background-image: url(./images/illustration-woman-online-mobile.svg);
+  background-repeat: no-repeat;
+  background-size: clamp(180px, 70%, 300px);
+  background-position: center;
+}
+
+.images picture img {
+  max-width: 300px;
+  translate: 15% -70%;
+}
+
+h2 {
+  font-weight: 700;
+  font-size: 2rem;
+}
+
+.content {
+  padding: 2rem 1rem;
+}
+
+.faq-container {
+  border-bottom: 1px solid var(--light-grayish-blue);
+  color: var(--very-dark-grayish-blue);
+
+  position: relative;
+  overflow: hidden;
+}
+
+.faq-container .question {
+  font-size: 15px;
+}
+
+.faq-container .question:hover {
+  color: var(--soft-red);
+}
+
+.faq-container .answer {
+  position: absolute;
+  color: var(--dark-grayish-blue);
+}
+
+.faq-container input[type="checkbox"] {
+  position: absolute;
+  top: -10000%;
+  left: -1000%;
+}
+
+label {
+  width: 100%;
+  position: relative;
+  margin-bottom: 7px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+
+  cursor: pointer;
+  transition: all 300ms ease-in-out;
+}
+
+label img {
+  justify-self: flex-end;
+  transition: all 300ms ease-in-out;
+}
+
+.faq-container input[type="checkbox"]:checked + label h3 {
+  font-weight: 700;
+}
+
+.faq-container input[type="checkbox"]:checked + label img {
+  rotate: 180deg;
+}
+
+.faq-container input[type="checkbox"]:checked + label + .answer {
+  position: relative;
+  animation: movein 300ms ease-in-out forwards;
+}
+
+@keyframes movein {
+  0% {
+    opacity: 0;
+    visibility: hidden;
+  }
+  50% {
+    opacity: 0.5;
+    visibility: visible;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.attribution {
+  font-size: 12px;
+  text-align: center;
+  color: #fff;
+}
+.attribution a {
+  color: hsl(56, 100%, 50%);
+}
+
+@media only screen and (min-width: 768px) {
+  main {
+    max-width: 1000px;
+
+    display: flex;
+    align-items: stretch;
+    justify-content: space-between;
+  }
+
+  .content {
+    flex: 0 1 50%;
+    min-width: 400px;
+    padding: 2rem 4rem 2rem 3rem;
+  }
+
+  .images {
+    flex: 0 1 50%;
+    height: initial;
+
+    background-image: url(./images/bg-pattern-desktop.svg);
+    background-size: 800px;
+    background-position: -450px 63%;
+  }
+
+  .images picture {
+    background-image: url(./images/illustration-woman-online-desktop.svg);
+    background-repeat: no-repeat;
+    background-size: 400px;
+    background-position: -50px center;
+  }
+
+  .images picture::before {
+    left: -50%;
+    top: 27%;
+
+    background-image: url(./images/illustration-box-desktop.svg);
+    background-size: 170px;
+  }
+}

@@ -82,7 +82,7 @@ main {
   background-position: center;
 }
 
-h2 {
+h1 {
   font-weight: 700;
   font-size: 2rem;
 }
@@ -149,7 +149,7 @@ label {
   transition: all 300ms ease-in-out;
 }
 
-.faq-container input[type="checkbox"]:checked + label + h3 {
+.faq-container input[type="checkbox"]:checked + label + h2 {
   font-weight: 700;
 }
 

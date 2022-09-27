@@ -27,7 +27,8 @@ Users should be able to:
 
 ### Screenshot
 
-![](./screenshot.jpg)
+A desktop view of how the site is...
+![](./screenshot.png)
 
 ### Links
 
